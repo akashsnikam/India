@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>India: Culture & Traditions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #f8f5f0;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+       
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 2rem;
+        }
+
+        .intro h2 {
+            font-size: 2.8rem;
+            color: #ffd700;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .intro h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(to right, #ff9933, #138808);
+            border-radius: 2px;
+        }
+
+        .intro p {
+            font-size: 1.2rem;
+            color: #e0e0e0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .culture-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            position: relative;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .culture-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 40px rgba(255, 153, 51, 0.2);
+            border-color: rgba(255, 153, 51, 0.3);
+        }
+
+        .card-header {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.8));
+            z-index: 1;
+        }
+
+        .culture-title {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffd700;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+            z-index: 2;
+        }
+
+        .card-content {
+            padding: 1.8rem;
+        }
+
+        .card-content p {
+            margin-bottom: 1.5rem;
+            color: #0b0b0b;
+        }
+
+        .highlights {
+            margin-top: 1.5rem;
+        }
+
+        .highlights li {
+            margin-bottom: 0.8rem;
+            list-style: none;
+            padding-left: 1.8rem;
+            position: relative;
+        }
+
+        .highlights li::before {
+            content: '•';
+            color: #ff9933;
+            font-size: 1.8rem;
+            position: absolute;
+            left: 0;
+            top: -8px;
+        }
+
+        .quote-section {
+            background: linear-gradient(135deg, rgba(19, 136, 8, 0.15) 0%, rgba(255, 153, 51, 0.15) 100%);
+            border-radius: 15px;
+            padding: 3rem;
+            margin: 4rem 0;
+            text-align: center;
+            border: 1px solid rgba(255, 153, 51, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote-section::before {
+            content: '"';
+            position: absolute;
+            top: -30px;
+            left: 20px;
+            font-size: 12rem;
+            color: rgba(255, 153, 51, 0.1);
+            font-family: Georgia, serif;
+        }
+
+        .quote {
+            font-size: 1.8rem;
+            font-style: italic;
+            color: #ffd700;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .author {
+            font-size: 1.3rem;
+            color: #ff9933;
+            font-weight: 500;
+        }
+
+
+
+        /* Decorative elements */
+        .pattern {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            opacity: 0.05;
+            z-index: -1;
+        }
+
+        .pattern-1 {
+            top: 10%;
+            left: 5%;
+            background: radial-gradient(circle, #ff9933 0%, transparent 70%);
+        }
+
+        .pattern-2 {
+            bottom: 20%;
+            right: 5%;
+            background: radial-gradient(circle, #138808 0%, transparent 70%);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+
+            .intro h2 {
+                font-size: 2.2rem;
+            }
+
+            .culture-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quote {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .intro h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(120deg, #f5f7fa 0%, #c3cfe2 100%);
+      margin: 0;
+      padding: 0;
+      color: #222;
+    }
+
+    .top-nav {
+      background: linear-gradient(to right, #3b2b1a, #002147, #336230);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: radial-gradient(orange, white, green);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.nav-links a {
+  background: radial-gradient(orange, white, green);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffcc00;
+}
+
+/* Heading Section */
+.page-header {
+  background: linear-gradient(to right, #FF9933, #ffffff, #138808);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  background: red;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.page-subtitle {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+#culture-tradition {
+    padding: 80px 0;
+    background: #fdfcfb;
+  }
+   
+
+
+    footer {
+    background: linear-gradient(to right, #3b2b1a, #002147, #336230);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9rem;
+    
+  }
+    </style>
+</head>
+<body>
+    <div class="pattern pattern-1"></div>
+    <div class="pattern pattern-2"></div>
+
+    <nav class="top-nav">
+        <div class="logo">🇮🇳 Land of Ayurveda</div>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="tourist.html">Tourism</a>
+          <a href="culture1.html">Culture & Traditions</a>
+          <a href="tech.html">Economy & Technology</a>
+          <a href="states.html">States of India</a>
+          <a href="developer.html">Developer</a>
+        </div>
+      </nav>
+    
+      <section class="page-header">
+        <h1>Indian: Culture & Traditions</h1>
+        <p class="page-subtitle">India is a land of vibrant festivals, age-old customs, and diverse culinary delights..</p>
+      </section>
+
+
+    <div class="container">
+       
+
+        <div class="culture-grid">
+            <div class="culture-card">
+                <div class="card-header" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://www.helloraahi.com/blog/wp-content/uploads/2024/02/Ganesh-Chaturthi.webp'); background-size: cover; background-position: center;">
+                    <h3 class="culture-title">Festivals</h3>
+                </div>
+                <div class="card-content">
+                    <p>India celebrates hundreds of festivals each year, reflecting its religious and cultural diversity. These celebrations bring communities together in vibrant displays of color, music, and tradition.</p>
+                    <div class="highlights">
+                        <li><strong>Diwali</strong> - Festival of Lights symbolizing victory of light over darkness</li>
+                        <li><strong>Holi</strong> - Festival of Colors celebrating spring and new beginnings</li>
+                        <li><strong>Durga Puja</strong> - Grand celebration of the goddess Durga in West Bengal</li>
+                        <li><strong>Onam</strong> - Harvest festival of Kerala with elaborate feasts and boat races</li>
+                    </div>
+                </div>
+            </div>
+
+            <div class="culture-card">
+                <div class="card-header" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://cdn.yehaindia.com/wp-content/uploads/2020/05/Indian-Classical-Musicains.jpg'); background-size: cover; background-position: center;">
+                    <h3 class="culture-title">Dance & Music</h3>
+                </div>
+                <div class="card-content">
+                    <p>Indian classical dance and music forms are among the world's oldest artistic traditions, with roots in the Natya Shastra, a 2000-year-old Sanskrit text on performing arts.</p>
+                    <div class="highlights">
+                        <li><strong>Bharatanatyam</strong> - Ancient classical dance from Tamil Nadu</li>
+                        <li><strong>Kathak</strong> - Storytelling dance form from North India</li>
+                        <li><strong>Hindustani & Carnatic</strong> - Two main traditions of classical music</li>
+                        <li><strong>Tabla & Sitar</strong> - Iconic Indian musical instruments</li>
+                    </div>
+                </div>
+            </div>
+
+            <div class="culture-card">
+                <div class="card-header" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://5.imimg.com/data5/SELLER/Default/2022/6/RB/DX/IA/50306918/006-jpg-500x500.jpg'); background-size: cover; background-position: center; background-position: top;">
+                    <h3 class="culture-title">Clothing</h3>
+                </div>
+                <div class="card-content">
+                    <p>Traditional Indian clothing varies by region, climate, and culture, with each garment telling a story of heritage and craftsmanship.</p>
+                    <div class="highlights">
+                        <li><strong>Sari</strong> - Elegant drape worn by women across India</li>
+                        <li><strong>Dhoti & Kurta</strong> - Traditional attire for men</li>
+                        <li><strong>Sherwani</strong> - Regal outfit for special occasions</li>
+                        <li><strong>Turban</strong> - Cultural headgear with regional variations</li>
+                    </div>
+                </div>
+            </div>
+
+            <div class="culture-card">
+                <div class="card-header" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrhk6nbcGGd7f7x57hUCqKzeDQyHDT6Cl0-MfFoQfKDTF4QjM2g6ky7GNUf_n5lPHnufI&usqp=CAU');">
+                    <h3 class="culture-title">Cuisine</h3>
+                </div>
+                <div class="card-content">
+                    <p>Indian cuisine is as diverse as its culture, with each region offering distinctive flavors, ingredients, and cooking techniques that have evolved over thousands of years.</p>
+                    <div class="highlights">
+                        <li><strong>Spices</strong> - Heart of Indian cooking with complex blends</li>
+                        <li><strong>Regional Varieties</strong> - From spicy Chettinad to sweet Bengali</li>
+                        <li><strong>Street Food</strong> - Vibrant culture of chaat, vada pav, and more</li>
+                        <li><strong>Ayurvedic Principles</strong> - Balance of six tastes in every meal</li>
+                    </div>
+                </div>
+            </div>
+
+            <div class="culture-card">
+                <div class="card-header" style="background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuBxmCFilblqCWZdisyIshmVCvWO_X--CHrDEoWjCQMTkkTkrIFG0zopvQq3CHqDAnQ80&usqp=CAU');">
+                    <h3 class="culture-title">Arts & Crafts</h3>
+                </div>
+                <div class="card-content">
+                    <p>India's artistic traditions span millennia, with each region developing unique forms of expression through various mediums.</p>
+                    <div class="highlights">
+                        <li><strong>Handloom Textiles</strong> - Banarasi silk, Kanchipuram, Pashmina</li>
+                        <li><strong>Pottery & Terracotta</strong> - Ancient craft still thriving</li>
+                        <li><strong>Painting Styles</strong> - Madhubani, Tanjore, Warli traditions</li>
+                        <li><strong>Jewelry Making</strong> - Intricate designs in gold and silver</li>
+                    </div>
+                </div>
+            </div>
+
+            <div class="culture-card">
+                <div class="card-header" style="background: linear-gradient(rgba(190, 76, 76, 0.3), rgba(0,0,0,0.3)), url('https://www.india-a2z.com/images/indian-architiecture.jpg'); background-size: cover; background-position: center; background-position: top;">
+                    <h3 class="culture-title">Architecture</h3>
+                </div>
+                <div class="card-content">
+                    <p>Indian architecture reflects the diversity of Indian culture, with influences from various historical periods and religious traditions.</p>
+                    <div class="highlights">
+                        <li><strong>Taj Mahal</strong> - Iconic symbol of Mughal architecture</li>
+                        <li><strong>Temples</strong> - From Dravidian to Nagara styles</li>
+                        <li><strong>Stepwells</strong> - Ancient water conservation structures</li>
+                        <li><strong>Colonial Architecture</strong> - Blend of Indian and European styles</li>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="quote-section">
+            <p class="quote">"We owe a lot to the Indians, who taught us how to count, without which no worthwhile scientific discovery could have been made."</p>
+            <p class="author">- Albert Einstein</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2025 Land of Ayurveda. All Rights Reserved.</p>
+      </footer>
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>States of India</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(120deg, #f5f7fa 0%, #c3cfe2 100%);
+      margin: 0;
+      padding: 0;
+    }
+    .top-nav {
+      background: linear-gradient(to right, #3b2b1a, #002147, #336230);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: radial-gradient(orange, white, green);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.nav-links a {
+  background: radial-gradient(orange, white, green);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffcc00;
+}
+
+/* Heading Section */
+.page-header {
+  background: linear-gradient(to right, #FF9933, #ffffff, #138808);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  background: red;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.page-subtitle {
+  font-size: 1.1rem;
+  color: #333;
+}
+   
+
+    .states-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .state-card {
+      background: linear-gradient(135deg, #f8fafc 70%, #e3f2fd 100%);
+      border-radius: 18px;
+      border: 1.5px solid #e0e0e0;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+      overflow: hidden;
+      transition: transform 0.22s, box-shadow 0.22s;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .state-card:hover {
+      transform: translateY(-10px) scale(1.035);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+    }
+    .state-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .state-content {
+      padding: 1.2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 220px;
+    }
+    .state-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #0a3d62;
+      margin-bottom: 0.3rem;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      margin-top: 0.2em;
+    }
+    .state-native {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #ff9933;
+      margin-left: 0.5em;
+      margin-bottom: 0;
+      display: inline;
+    }
+    .state-flag {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-right: 0.5em;
+      border: 1px solid #e0e0e0;
+    }
+    .state-tagline {
+      font-size: 1.05em;
+      font-weight: 600;
+      color: #1976d2;
+      margin-bottom: 0.4em;
+      margin-top: 0.1em;
+      letter-spacing: 0.01em;
+    }
+    .state-desc {
+      color: #444;
+      font-size: 1.05em;
+      font-weight: 400;
+      margin: 0;
+      text-align: justify;
+      margin-bottom: 1.2em;
+    }
+    .learn-more-btn {
+      align-self: flex-start;
+      background: #ff9933;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 0.5em 1.3em;
+      font-size: 1em;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(255,153,51,0.08);
+      transition: background 0.18s, box-shadow 0.18s, transform 0.18s;
+      margin-top: auto;
+    }
+    .learn-more-btn:hover {
+      background: #e65100;
+      box-shadow: 0 4px 16px rgba(255,153,51,0.18);
+      transform: translateY(-2px) scale(1.04);
+    }
+    @media (max-width: 600px) {
+      .states-grid {
+        padding: 1rem;
+        gap: 1rem;
+      }
+      .state-card {
+        border-radius: 10px;
+      }
+    }
+
+    footer {
+    background: linear-gradient(to right, #3b2b1a, #002147, #336230);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9rem;
+    
+  }
+  </style>
+</head>
+<body>
+
+  <nav class="top-nav">
+    <div class="logo">🇮🇳 Land of Ayurveda</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="tourist.html">Tourism</a>
+      <a href="culture1.html">Culture & Traditions</a>
+      <a href="tech.html">Economy & Technology</a>
+      <a href="states.html">States of India</a>
+      <a href="developer.html">Developer</a>
+    </div>
+  </nav>
+  
+
+  <section class="page-header">
+    <h1>States of India</h1>
+    <p style="font-size:1.1rem; margin-top:0.5rem;">Explore the diversity of India's states</p>
+  </section>
+
+  <section class="states-grid">
+    <!-- Maharashtra -->
+    <div class="state-card">
+      <img class="state-img" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Maharashtra">
+      <div class="state-content">
+        <div class="state-title"><span class="state-flag">🌴</span>Maharashtra <span class="state-native">महाराष्ट्र</span></div>
+        <div class="state-tagline">सपनों की नगरी मुंबई!</div>
+        <div class="state-desc">महाराष्ट्र भारतातील सर्वात मोठ्या राज्यांपैकी एक आहे. मुंबई, पुणे, आणि सह्याद्री पर्वत येथे प्रसिद्ध आहेत.</div>
+      </div>
+    </div>
+    <!-- Kerala -->
+    <div class="state-card">
+      <img class="state-img" src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=800&q=80" alt="Kerala">
+      <div class="state-content">
+        <div class="state-title"><span class="state-flag">🌊</span>Kerala <span class="state-native">കേരളം</span></div>
+        <div class="state-tagline">God's Own Country</div>
+        <div class="state-desc">കേരളം ബാക്ക്‌വാട്ടറുകൾക്കും പച്ചപ്പിനും പ്രശസ്തമാണ്. ആയുര്‍വേദം,കത്തകളി, ഓണം ഇവിടുത്തെ പ്രത്യേകതകളാണ്.</div>
+      </div>
+    </div>
+    <!-- Rajasthan -->
+    <div class="state-card">
+      <img class="state-img" src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80" alt="Rajasthan">
+      <div class="state-content">
+        <div class="state-title"><span class="state-flag">🏜️</span>Rajasthan <span class="state-native">राजस्थान</span></div>
+        <div class="state-tagline">Land of Kings</div>
+        <div class="state-desc">राजस्थान अपने किलों, महलों और रंगीन त्योहारों के लिए प्रसिद्ध है। जयपुर और उदयपुर यहाँ के प्रमुख शहर हैं।</div>
+      </div>
+    </div>
+    <!-- West Bengal -->
+    <div class="state-card">
+      <img class="state-img" src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80" alt="West Bengal">
+      <div class="state-content">
+        <div class="state-title"><span class="state-flag">🌉</span>West Bengal <span class="state-native">পশ্চিমবঙ্গ</span></div>
+        <div class="state-tagline">City of Joy & Culture</div>
+        <div class="state-desc">পশ্চিমবঙ্গ তার সাহিত্য, দুর্গাপূজা ও রসগোল্লার জন্য বিখ্যাত। কলকাতা এখানকার প্রধান শহর।</div>
+      </div>
+    </div>
+    <!-- Tamil Nadu -->
+    <div class="state-card">
+      <img class="state-img" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Tamil Nadu">
+      <div class="state-content">
+        <div class="state-title"><span class="state-flag">🏯</span>Tamil Nadu <span class="state-native">தமிழ்நாடு</span></div>
+        <div class="state-tagline">Land of Temples</div>
+        <div class="state-desc">தமிழ்நாடு கோவில்கள் மற்றும் பாரம்பரியக் கலைகளுக்குப் புகழ்பெற்றது. சென்னை முக்கிய நகரம்.</div>
+      </div>
+    </div>
+    <!-- Punjab -->
+    <div class="state-card">
+      <img class="state-img" src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80" alt="Punjab">
+      <div class="state-content">
+        <div class="state-title"><span class="state-flag">🌾</span>Punjab <span class="state-native">ਪੰਜਾਬ</span></div>
+        <div class="state-tagline">Land of Five Rivers</div>
+        <div class="state-desc">ਪੰਜਾਬ ਭੰਗੜਾ, ਲੱਸੀ ਅਤੇ ਸੋਨੇ ਦੇ ਮੰਦਰ ਲਈ ਮਸ਼ਹੂਰ ਹੈ। ਅੰਮ੍ਰਿਤਸਰ ਇੱਥੇ ਦਾ ਪ੍ਰਸਿੱਧ ਸ਼ਹਿਰ ਹੈ।</div>
+      </div>
+    </div>
+    <!-- Uttar Pradesh -->
+    <div class="state-card">
+      <img class="state-img" src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=800&q=80" alt="Varanasi Ghats, Uttar Pradesh">
+      <div class="state-content">
+        <div class="state-title"><span class="state-flag">🕌</span>Uttar Pradesh <span class="state-native">उत्तर प्रदेश</span></div>
+        <div class="state-tagline">Heart of India</div>
+        <div class="state-desc">उत्तर प्रदेश ताजमहल और काशी के लिए प्रसिद्ध है। यहाँ की संस्कृति और इतिहास समृद्ध हैं।</div>
+      </div>
+    </div>
+    <!-- Gujarat -->
+    <div class="state-card">
+      <img class="state-img" src="https://images.unsplash.com/photo-1465156799763-2c087c332922?auto=format&fit=crop&w=800&q=80" alt="Gujarat">
+      <div class="state-content">
+        <div class="state-title"><span class="state-flag">🦁</span>Gujarat <span class="state-native">ગુજરાત</span></div>
+        <div class="state-tagline">Birthplace of Gandhi</div>
+        <div class="state-desc">ગુજરાત મહાત્મા ગાંધીની જન્મભૂમિ છે. અમદાવાદ અને ગીર જંગલ અહીંના મુખ્ય આકર્ષણ છે.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Land of Ayurveda. All Rights Reserved.</p>
+  </footer>
+</body>
+</html> 
